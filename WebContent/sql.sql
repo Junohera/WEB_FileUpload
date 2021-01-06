@@ -1,0 +1,17 @@
+CREATE TABLE PRODUCT (
+    CODE NUMBER(5) PRIMARY KEY,
+    NAME VARCHAR2(100),
+    PRICE NUMBER(8),
+    PICTUREURL VARCHAR2(50),
+    DESCRIPTION VARCHAR2(1000)
+);
+CREATE SEQUENCE PRODUCT_SEQ START WITH 1 INCREMENT BY 1;
+INSERT INTO PRODUCT VALUES(PRODUCT_SEQ.NEXTVAL, '개념을 콕콕', 27000, 'db.jpg', '데이터베이스에 대한. .. ');
+INSERT INTO PRODUCT VALUES(PRODUCT_SEQ.NEXTVAL, '개념을 콕콕1', 47000, 'jquery.jpg', 'jquery 대한. .. ');
+SELECT * FROM PRODUCT;
+
+select * from product order by code desc;
+UPDATE product
+SET
+    pictureurl = 'java.gif'
+WHERE code = 4;
